@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>走托邦 小红书卡片</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0B121C; font-family:"PingFang SC","Hiragino Sans GB",sans-serif; color:#fff; min-height:100vh; }
+.header { text-align:center; padding:60px 40px 40px; }
+.header h1 { font-size:48px; color:#F9A825; letter-spacing:8px; margin-bottom:12px; }
+.header p { font-size:18px; color:#8899AA; letter-spacing:4px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:32px; padding:20px 60px 80px; max-width:1400px; margin:0 auto; }
+.series-card { background:#1a2530; border-radius:16px; overflow:hidden; cursor:pointer; transition:transform .2s,box-shadow .2s; border:2px solid transparent; }
+.series-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.5); border-color:#F9A825; }
+.series-cover { aspect-ratio:1080/1350; background:#fffef5; overflow:hidden; position:relative; }
+.series-cover iframe { width:1080px; height:1350px; border:none; pointer-events:none; transform:scale(0.26); transform-origin:top left; position:absolute; top:0; left:0; }
+.series-cover .overlay { position:absolute; inset:0; background:linear-gradient(0deg,rgba(11,18,28,0.15) 0%,transparent 60%); }
+.series-info { padding:20px 24px; }
+.series-info h2 { font-size:22px; color:#F9A825; margin-bottom:6px; letter-spacing:2px; }
+.series-info .meta { font-size:14px; color:#8899AA; letter-spacing:1px; }
+
+/* Carousel */
+.overlay-bg { position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:100; display:none; align-items:center; justify-content:center; flex-direction:column; }
+.overlay-bg.active { display:flex; }
+.carousel { display:flex; align-items:center; gap:24px; max-width:100vw; max-height:80vh; padding:20px; }
+.carousel-frame { width:540px; height:675px; flex-shrink:0; background:#fffef7; border-radius:12px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+.carousel-frame iframe { width:1080px; height:1350px; border:none; transform:scale(0.5); transform-origin:top left; }
+.nav-btn { width:56px; height:56px; border-radius:50%; border:2px solid rgba(255,255,255,.3); background:rgba(255,255,255,.08); color:#fff; font-size:28px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; flex-shrink:0; user-select:none; }
+.nav-btn:hover { background:#F9A825; border-color:#F9A825; color:#0B121C; }
+.nav-btn:disabled { opacity:.15; cursor:default; pointer-events:none; }
+.close-btn { position:fixed; top:24px; right:24px; width:48px; height:48px; border-radius:50%; border:2px solid rgba(255,255,255,.3); background:rgba(0,0,0,.5); color:#fff; font-size:24px; cursor:pointer; z-index:101; display:none; align-items:center; justify-content:center; transition:all .2s; }
+.close-btn.active { display:flex; }
+.close-btn:hover { background:#ff4757; border-color:#ff4757; }
+.page-indicator { color:#8899AA; font-size:16px; letter-spacing:2px; margin-top:16px; }
+.page-indicator.hidden { display:none; }
+
+@media (max-width:768px) {
+  .grid { grid-template-columns:1fr; padding:20px; }
+  .header h1 { font-size:32px; }
+  .carousel-frame { width:90vw; height:112.5vw; }
+  .carousel-frame iframe { width:90vw; height:112.5vw; transform:none; }
+  .nav-btn { width:40px; height:40px; font-size:20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>说走就走的走托邦</h1>
+  <p>小红书文字卡片 · 全系列</p>
+</div>
+
+<div class="grid">
+  <div class="series-card" onclick="openCarousel('vol01')">
+    <div class="series-cover">
+      <iframe src="vol01/card-v01-1.html" loading="lazy"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <div class="series-info">
+      <h2>Vol.01</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">算法 / 史诗 / 与童年</p>
+      <div class="meta">7 张卡片</div>
+    </div>
+  </div>
+  <div class="series-card" onclick="openCarousel('vol02')">
+    <div class="series-cover">
+      <iframe src="vol02/card-v02-1.html" loading="lazy"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <div class="series-info">
+      <h2>Vol.02</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">上山下乡 / 双创 / 与OPC</p>
+      <div class="meta">7 张卡片</div>
+    </div>
+  </div>
+  <div class="series-card" onclick="openCarousel('vol03')">
+    <div class="series-cover">
+      <iframe src="vol03/card-v03-1.html" loading="lazy"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <div class="series-info">
+      <h2>Vol.03</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">如果宇宙 / 是造物主的 / 过家家</p>
+      <div class="meta">8 张卡片</div>
+    </div>
+  </div>
+  <div class="series-card" onclick="openCarousel('vol04')">
+    <div class="series-cover">
+      <iframe src="vol04/card-v04-1.html" loading="lazy"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <div class="series-info">
+      <h2>Vol.04</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">那些源于恐惧的热爱</p>
+      <div class="meta">8 张卡片</div>
+    </div>
+  </div>
+  <div class="series-card" onclick="openCarousel('vol05')">
+    <div class="series-cover">
+      <iframe src="vol05/card-v05-1.html" loading="lazy"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <div class="series-info">
+      <h2>Vol.05</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">比起追逐标准，我更喜欢可预判的随机</p>
+      <div class="meta">7 张卡片</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="overlay-bg" id="overlay">
+  <div class="carousel">
+    <button class="nav-btn" id="prevBtn" onclick="nav(-1)">&#8249;</button>
+    <div class="carousel-frame" id="frame"></div>
+    <button class="nav-btn" id="nextBtn" onclick="nav(1)">&#8250;</button>
+  </div>
+  <div class="page-indicator hidden" id="pageNum"></div>
+</div>
+<button class="close-btn" id="closeBtn" onclick="closeCarousel()">&#10005;</button>
+
+<script>
+let currentVol='',currentIdx=0,totalCards=0;
+const counts={vol01:7,vol02:7,vol03:8,vol04:8,vol05:7};
+
+function openCarousel(vol) {
+  currentVol=vol; currentIdx=0; totalCards=counts[vol];
+  renderCard();
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('closeBtn').classList.add('active');
+  document.getElementById('pageNum').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+function closeCarousel() {
+  document.getElementById('overlay').classList.remove('active');
+  document.getElementById('closeBtn').classList.remove('active');
+  document.getElementById('pageNum').classList.add('hidden');
+  document.body.style.overflow='';
+  currentVol='';
+}
+function nav(dir) {
+  currentIdx=Math.max(0,Math.min(totalCards-1,currentIdx+dir));
+  renderCard();
+}
+function renderCard() {
+  var vn=currentVol.slice(-2), n=String(currentIdx+1);
+  document.getElementById('frame').innerHTML='<iframe src="'+currentVol+'/card-v'+vn+'-'+n+'.html"></iframe>';
+  document.getElementById('pageNum').textContent=(currentIdx+1)+' / '+totalCards;
+  document.getElementById('prevBtn').disabled=currentIdx===0;
+  document.getElementById('nextBtn').disabled=currentIdx>=totalCards-1;
+}
+document.addEventListener('keydown',function(e) {
+  if(!currentVol)return;
+  if(e.key==='ArrowLeft')nav(-1);
+  if(e.key==='ArrowRight')nav(1);
+  if(e.key==='Escape')closeCarousel();
+});
+document.getElementById('overlay').addEventListener('click',function(e) {
+  if(e.target===this)closeCarousel();
+});
+</script>
+</body>
+</html>
