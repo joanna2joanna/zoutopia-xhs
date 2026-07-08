@@ -6,19 +6,19 @@
 <title>走托邦 小红书卡片</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:#f0ebe3; font-family:"PingFang SC","Hiragino Sans GB",sans-serif; color:#2d3436; min-height:100vh; }
+body { background:#1a2332; font-family:"PingFang SC","Hiragino Sans GB",sans-serif; color:#fff; min-height:100vh; }
 .header { text-align:center; padding:60px 40px 40px; }
-.header h1 { font-size:48px; color:#e6a800; letter-spacing:8px; margin-bottom:12px; }
-.header p { font-size:18px; color:#887; letter-spacing:4px; }
+.header h1 { font-size:48px; color:#F9A825; letter-spacing:8px; margin-bottom:12px; }
+.header p { font-size:18px; color:#8899AA; letter-spacing:4px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:32px; padding:20px 60px 80px; max-width:1400px; margin:0 auto; }
-.series-card { background:#fff; border-radius:16px; overflow:hidden; cursor:pointer; transition:transform .2s,box-shadow .2s; border:2px solid #e8dcc8; box-shadow:0 4px 20px rgba(0,0,0,.06); }
-.series-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.15); border-color:#c78f00; }
+.series-card { background:#2a3545; border-radius:16px; overflow:hidden; cursor:pointer; transition:transform .2s,box-shadow .2s; border:1px solid #354050; }
+.series-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.5); border-color:#F9A825; }
 .series-cover { aspect-ratio:1080/1350; background:#fffef5; overflow:hidden; position:relative; }
-.series-cover iframe { width:1080px; height:1350px; border:none; pointer-events:none; transform:scale(0.26); transform-origin:top left; position:absolute; top:-70px; left:0; }
+.series-cover img { width:100%; height:100%; object-fit:cover; display:block; }
 .series-cover .overlay { position:absolute; inset:0; background:linear-gradient(0deg,rgba(11,18,28,0.15) 0%,transparent 60%); }
 .series-info { padding:20px 24px; }
-.series-info h2 { font-size:22px; color:#c78f00; margin-bottom:6px; letter-spacing:2px; }
-.series-info .meta { font-size:14px; color:#999; letter-spacing:1px; }
+.series-info h2 { font-size:22px; color:#F9A825; margin-bottom:6px; letter-spacing:2px; }
+.series-info .meta { font-size:14px; color:#8899AA; letter-spacing:1px; }
 
 /* Carousel */
 .overlay-bg { position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:100; display:none; align-items:center; justify-content:center; flex-direction:column; }
@@ -32,7 +32,7 @@ body { background:#f0ebe3; font-family:"PingFang SC","Hiragino Sans GB",sans-ser
 .close-btn { position:fixed; top:24px; right:24px; width:48px; height:48px; border-radius:50%; border:2px solid rgba(255,255,255,.3); background:rgba(0,0,0,.5); color:#fff; font-size:24px; cursor:pointer; z-index:101; display:none; align-items:center; justify-content:center; transition:all .2s; }
 .close-btn.active { display:flex; }
 .close-btn:hover { background:#ff4757; border-color:#ff4757; }
-.page-indicator { color:#aaa; font-size:16px; letter-spacing:2px; margin-top:16px; }
+.page-indicator { color:#8899AA; font-size:16px; letter-spacing:2px; margin-top:16px; }
 .page-indicator.hidden { display:none; }
 
 @media (max-width:768px) {
@@ -54,56 +54,51 @@ body { background:#f0ebe3; font-family:"PingFang SC","Hiragino Sans GB",sans-ser
 <div class="grid">
   <div class="series-card" onclick="openCarousel('vol01')">
     <div class="series-cover">
-      <iframe src="vol01/card-v01-1.html" loading="lazy"></iframe>
-      <div class="overlay"></div>
+      <img src="vol01/card-v01-1.png" loading="lazy" alt="">
     </div>
     <div class="series-info">
       <h2>Vol.01</h2>
-      <p style="font-size:16px;color:#555;margin-bottom:4px;">算法 / 史诗 / 与童年</p>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">算法 / 史诗 / 与童年</p>
       <div class="meta">7 张卡片</div>
     </div>
   </div>
   <div class="series-card" onclick="openCarousel('vol02')">
     <div class="series-cover">
-      <iframe src="vol02/card-v02-1.html" loading="lazy"></iframe>
-      <div class="overlay"></div>
+      <img src="vol02/card-v02-1.png" loading="lazy" alt="">
     </div>
     <div class="series-info">
       <h2>Vol.02</h2>
-      <p style="font-size:16px;color:#555;margin-bottom:4px;">上山下乡 / 双创 / 与OPC</p>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">上山下乡 / 双创 / 与OPC</p>
       <div class="meta">7 张卡片</div>
     </div>
   </div>
   <div class="series-card" onclick="openCarousel('vol03')">
     <div class="series-cover">
-      <iframe src="vol03/card-v03-1.html" loading="lazy"></iframe>
-      <div class="overlay"></div>
+      <img src="vol03/card-v03-1.png" loading="lazy" alt="">
     </div>
     <div class="series-info">
       <h2>Vol.03</h2>
-      <p style="font-size:16px;color:#555;margin-bottom:4px;">如果宇宙 / 是造物主的 / 过家家</p>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">如果宇宙 / 是造物主的 / 过家家</p>
       <div class="meta">8 张卡片</div>
     </div>
   </div>
   <div class="series-card" onclick="openCarousel('vol04')">
     <div class="series-cover">
-      <iframe src="vol04/card-v04-1.html" loading="lazy"></iframe>
-      <div class="overlay"></div>
+      <img src="vol04/card-v04-1.png" loading="lazy" alt="">
     </div>
     <div class="series-info">
       <h2>Vol.04</h2>
-      <p style="font-size:16px;color:#555;margin-bottom:4px;">那些源于恐惧的热爱</p>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">那些 / 源于恐惧的 / 热爱</p>
       <div class="meta">8 张卡片</div>
     </div>
   </div>
   <div class="series-card" onclick="openCarousel('vol05')">
     <div class="series-cover">
-      <iframe src="vol05/card-v05-1.html" loading="lazy"></iframe>
-      <div class="overlay"></div>
+      <img src="vol05/card-v05-1.png" loading="lazy" alt="">
     </div>
     <div class="series-info">
       <h2>Vol.05</h2>
-      <p style="font-size:16px;color:#555;margin-bottom:4px;">比起追逐标准，我更喜欢可预判的随机</p>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">比起追逐标准 / 我更喜欢 / 可预判的随机</p>
       <div class="meta">7 张卡片</div>
     </div>
   </div>
