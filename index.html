@@ -102,6 +102,16 @@ body { background:#1a2332; font-family:"PingFang SC","Hiragino Sans GB",sans-ser
       <div class="meta">7 张卡片</div>
     </div>
   </div>
+  <div class="series-card" onclick="openCarousel('vol06')">
+    <div class="series-cover">
+      <img src="vol06/card-v06-1.png" loading="lazy" alt="">
+    </div>
+    <div class="series-info">
+      <h2>Vol.06</h2>
+      <p style="font-size:16px;color:#ddd;margin-bottom:4px;">AI最好的善意 / 是释放思考</p>
+      <div class="meta">9 张卡片</div>
+    </div>
+  </div>
 
 </div>
 
@@ -117,7 +127,7 @@ body { background:#1a2332; font-family:"PingFang SC","Hiragino Sans GB",sans-ser
 
 <script>
 let currentVol='',currentIdx=0,totalCards=0;
-const counts={vol01:7,vol02:7,vol03:8,vol04:8,vol05:7};
+const counts={vol01:7,vol02:7,vol03:8,vol04:8,vol05:7,vol06:9};
 
 function openCarousel(vol) {
   currentVol=vol; currentIdx=0; totalCards=counts[vol];
